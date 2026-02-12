@@ -22,7 +22,8 @@ import {
   Star,
   Zap,
   Award,
-  ChevronDown
+  ChevronDown,
+  Book
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
@@ -55,6 +56,7 @@ export function Navbar({ currentPage, onNavigate }: NavbarProps) {
   const navItems: { id: Page; label: string; icon: React.ElementType }[] = [
     { id: 'home', label: t('Home', 'الرئيسية'), icon: Home },
     { id: 'lessons', label: t('Lessons', 'الدروس'), icon: BookOpen },
+    { id: 'book', label: t('Book', 'الكتاب'), icon: Book },
     { id: 'simulator', label: t('IDE', 'بيئة التطوير'), icon: Code },
     { id: 'badges', label: t('Badges', 'الشارات'), icon: Trophy },
     { id: 'leaderboard', label: t('Leaderboard', 'المتصدرين'), icon: Star },
@@ -62,11 +64,9 @@ export function Navbar({ currentPage, onNavigate }: NavbarProps) {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled 
-        ? theme === 'dark' 
-          ? 'bg-gray-900/95 backdrop-blur-md shadow-lg border-b border-gray-800' 
-          : 'bg-white/95 backdrop-blur-md shadow-md border-b border-gray-200'
-        : 'bg-transparent'
+      isScrolled
+        ? 'bg-slate-900/70 backdrop-blur-xl border-b border-white/10 shadow-[0_12px_40px_rgba(15,23,42,0.65)]'
+        : 'bg-slate-900/30 backdrop-blur-lg border-b border-white/5'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">

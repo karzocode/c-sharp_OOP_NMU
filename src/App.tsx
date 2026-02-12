@@ -14,8 +14,9 @@ import { LessonPage } from './pages/LessonPage';
 import { SimulatorPage } from './pages/SimulatorPage';
 import { BadgesPage } from './pages/BadgesPage';
 import { LeaderboardPage } from './pages/LeaderboardPage';
+import { BookPage } from './pages/BookPage';
 
-export type Page = 'home' | 'lessons' | 'lesson' | 'simulator' | 'badges' | 'leaderboard';
+export type Page = 'home' | 'lessons' | 'lesson' | 'simulator' | 'badges' | 'leaderboard' | 'book';
 
 function AppContent() {
   const [currentPage, setCurrentPage] = useState<Page>('home');
@@ -57,6 +58,7 @@ function AppContent() {
         {currentPage === 'simulator' && <SimulatorPage />}
         {currentPage === 'badges' && <BadgesPage />}
         {currentPage === 'leaderboard' && <LeaderboardPage />}
+        {currentPage === 'book' && <BookPage onNavigate={navigateTo} />}
       </main>
     </div>
   );
